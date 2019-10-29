@@ -1,7 +1,8 @@
-class StationDecorator < FuelStation
-  def initialize(station_data, location)
+class StationDecorator < SimpleDelegator
+  def initialize(fuel_station, location)
+    @fuel_station = fuel_station
     @location = location
-    super(station_data)
+    super(fuel_station)
   end
 
   def distance

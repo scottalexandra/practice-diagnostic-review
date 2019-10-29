@@ -5,7 +5,8 @@ class SearchFacade
 
   def get_nearest_station
     station_data = nrel_service.get_station_data
-    StationDecorator.new(station_data, location)
+    fuel_station = create_fuel_station(station_data)
+    StationDecorator.new(fuel_station, location)
   end
 
   private
